@@ -1,16 +1,13 @@
-:root,
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-size: 62.5%;
 }
-:root {
-  --primary: #0099ff;
-  --radius: 8px;
-}
+
 body {
   font-family: sans-serif;
   background-color: #fafafa;
   color: #222;
+  width: 100%;
 }

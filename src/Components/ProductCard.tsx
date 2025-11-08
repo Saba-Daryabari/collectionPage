@@ -3,7 +3,6 @@ import styles from "../styles/productCard.module.scss";
 import { useState } from "react";
 
 type Props = { product: Product };
-
 const ProductCard = ({ product }: Props) => {
   const BASE_URL = "https://backend.zeepol.ir";
   const mainImage = new URL(product.mainImage, BASE_URL).href;
@@ -13,7 +12,13 @@ const ProductCard = ({ product }: Props) => {
 
   return (
     <div className={styles.productCard}>
-      <img src={mainImage} alt={product.name} className={styles.productImage} />
+      <div className={styles.imageContainer}>
+        <img
+          src={mainImage}
+          alt={product.name}
+          className={styles.productImage}
+        />
+      </div>
       <div className={styles.productCaption}>
         <div>
           <h3 className={styles.productTitle}>{product.name}</h3>

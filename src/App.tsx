@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import ProductCard from "./Components/ProductCard";
 import styles from "./styles/collection.module.scss";
+import type { Product } from "./Components/productTypes";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -15,8 +16,8 @@ function App() {
   }, []);
 
   return (
-    <div className={styles.collectionContainer}>
-      {products.map((item) => (
+    <div className={styles.collectionContainer} ref={collectionRef}>
+      {products.map((item: Product) => (
         <ProductCard product={item} key={item.id} />
       ))}
     </div>
