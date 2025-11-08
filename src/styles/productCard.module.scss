@@ -30,10 +30,10 @@
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
+  border: 1px solid transparent;
   transition: border 0.15s ease;
-  padding: 5px;
 }
 
-.variant:hover {
+.activeVariant {
   border: 1px solid #333;
 }

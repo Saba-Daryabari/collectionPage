@@ -7,8 +7,10 @@ type Props = { product: Product };
 const ProductCard = ({ product }: Props) => {
   const BASE_URL = "https://backend.zeepol.ir";
   const mainImage = new URL(product.mainImage, BASE_URL).href;
+  const defaultVariant = product.variants[0];
 
-  const [selectedVariant, setSelectedVariant] = useState("");
+  const [selectedVariant, setSelectedVariant] = useState(defaultVariant.id);
+
   return (
     <div className={styles.productCard}>
       <img src={mainImage} alt={product.name} className={styles.productImage} />
@@ -20,11 +22,11 @@ const ProductCard = ({ product }: Props) => {
               {product.variants.map((v) => (
                 <div
                   key={v.id}
-                  className={styles.variant}
+                  className={`${styles.variant} ${
+                    selectedVariant === v.id ? styles.activeVariant : ""
+                  }`}
                   style={{ backgroundColor: v.color.hex }}
-                  onMouseEnter={() => {
-                    setSelectedVariant(v.color.name);
-                  }}
+                  onClick={() => setSelectedVariant(v.id)}
                 ></div>
               ))}
             </div>
