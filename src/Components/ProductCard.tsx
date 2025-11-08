@@ -7,17 +7,11 @@ type Props = { product: Product };
 const ProductCard = ({ product }: Props) => {
   const BASE_URL = "https://backend.zeepol.ir";
   const mainImage = new URL(product.mainImage, BASE_URL).href;
-  const [currentImage, setCurrentImage] = useState(
-    new URL(product.mainImage, BASE_URL).href
-  );
 
+  const [selectedVariant, setSelectedVariant] = useState("");
   return (
     <div className={styles.productCard}>
-      <img
-        src={currentImage}
-        alt={product.name}
-        className={styles.productImage}
-      />
+      <img src={mainImage} alt={product.name} className={styles.productImage} />
       <div className={styles.productCaption}>
         <div>
           <h3 className={styles.productTitle}>{product.name}</h3>
@@ -29,14 +23,8 @@ const ProductCard = ({ product }: Props) => {
                   className={styles.variant}
                   style={{ backgroundColor: v.color.hex }}
                   onMouseEnter={() => {
-                    const img = v.images?.[0];
-                    setCurrentImage(
-                      img ? new URL(img, BASE_URL).href : mainImage
-                    );
+                    setSelectedVariant(v.color.name);
                   }}
-                  onMouseLeave={() =>
-                    setCurrentImage(new URL(product.mainImage, BASE_URL).href)
-                  }
                 ></div>
               ))}
             </div>
