@@ -26,7 +26,7 @@ const ProductCard = ({ product }: Props) => {
                     selectedVariant === v.id ? styles.activeVariant : ""
                   }`}
                   style={{ backgroundColor: v.color.hex }}
-                  onClick={() => setSelectedVariant(v.id)}
+                  onMouseEnter={() => setSelectedVariant(v.id)}
                 ></div>
               ))}
             </div>
