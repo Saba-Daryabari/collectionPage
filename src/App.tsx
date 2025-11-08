@@ -16,7 +16,7 @@ function App() {
   }, []);
 
   return (
-    <div className={styles.collectionContainer} ref={collectionRef}>
+    <div className={styles.collectionContainer}>
       {products.map((item: Product) => (
         <ProductCard product={item} key={item.id} />
       ))}
