@@ -1,7 +1,6 @@
 @use "./mixins" as m;
 
 .collectionContainer {
-  max-width: 1728px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
