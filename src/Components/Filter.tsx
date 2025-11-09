@@ -8,7 +8,7 @@ export default function Filter() {
         <div className="">
             <div className={styles.topBar}>
                 <div className={styles.routes}>
-                    furniture / beds / shop all <RiArrowDropDownLine />{" "}
+                    furniture / beds / shop all <span className={styles.icon}><RiArrowDropDownLine /></span>{" "}
                 </div>
                 <div className={styles.color}>colors</div>
                 <div className={styles.filter}>All filters</div>

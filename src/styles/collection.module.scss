@@ -1,16 +1,71 @@
 @use "./mixins" as m;
-
-.collectionContainer {
+.app {
   max-width: 1728px;
+  margin-inline: auto;
+}
+.collectionContainer {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   justify-items: center;
   gap: 1rem;
-  padding: 0 2rem;
-  margin-inline: auto;
+  padding: 2rem 2rem;
+
   @include m.breakpoint("tablet") {
     grid-template-columns: 1fr;
+  }
+}
+.container {
+  margin: 3rem auto;
+}
+.topBar {
+  font-size: 4.4rem;
+  width: 100%;
+  display: flex;
+  padding: 1rem 0 ;
+  border-bottom: 1px solid #333;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-family: Calibre, Helvetica, sans-serif;
+  text-transform: capitalize;
+  font-weight: 500;
+  @include m.breakpoint('desktop'){
+    font-size: 4rem;
+  }
+  @include m.breakpoint('tablet'){
+    font-size: 3rem;
+  }
+  @include m.breakpoint('mobile-l'){
+    font-size: 2rem;
+    gap: 8px;
+  }
+
+}
+.routes {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  word-spacing: 4px;
+  cursor: pointer;
+}
+.color {
+  cursor: pointer;
+}
+.filter {
+  cursor: pointer;
+}
+.icon {
+  cursor: pointer;
+  font-size: 4rem;
+    @include m.breakpoint('tablet'){
+    font-size: 3rem;
+  }
+  @include m.breakpoint('mobile-l'){
+    font-size: 2rem;
+    gap: 8px;
   }
 }

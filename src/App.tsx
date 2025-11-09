@@ -21,7 +21,7 @@ function App() {
   }, []);
   console.log(products)
   return (
-    <>
+    <div className={styles.app}>
       <Filter />
       <div className={styles.collectionContainer}>
         {products.map((item: Product) => (
@@ -29,7 +29,7 @@ function App() {
         ))}
 
       </div>
-    </>
+    </div>
   );
 }
 export default App;

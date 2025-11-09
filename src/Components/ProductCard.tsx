@@ -21,7 +21,7 @@ const ProductCard = ({ product }: Props) => {
       </div>
       <div className={styles.productCaption}>
         <div>
-          <h3 className={styles.productTitle}>{product.name}</h3>
+          <h3 className={styles.productTitle}>{product.name.split(" ").slice(0, 4).join(" ")}</h3>
           {product.variants.length > 0 && (
             <div className={styles.variantContainer}>
               {product.variants.map((v) => (
